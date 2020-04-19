@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>The Smugglers (Pub) | Roker</title>
+	
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="favicon.ico" />
+	
+	<meta name="description" content="The Smugglers is a pub in Roker, Sunderland, UK">
+    <meta name="keywords" content="Smugglers, Roker, Sunderland, Pub, Music, Live Music, Buskers, Food, Drink">
+    <meta name="author" content="Alex Hedley">
+	
+	<link rel="stylesheet" href="css/main.css">
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Rock+Salt|Coming+Soon'>
+	<!--[if IE 6]>
+	<link rel="stylesheet" href="css/ie6.css">
+	<![endif]-->
+	
+	<style>
+	table td { padding: 1px; }
+	
+	#regevents { margin: 0px 5px; }
+	
+	table tr, table td { border: 1px solid black; }
+	
+	#regevents tfoot { text-align: center; }
+	
+	.note { font-size: 60%; }
+	
+	/*tbody tr:nth-child(2n+1) {
+		background-color: #fff;
+	}
+	
+	tbody tr:nth-child(2n) {
+		background-color: #99ff99;
+	}*/
+	
+	caption { text-align: right; }
+	
+	.mystri {text-decoration: line-through;}
+	</style>
+	<style>
+	#lighthouse {
+	    list-style: none;
+	    text-align: center;
+	    width: 100px;
+	    border: 1px black solid;
+	    background: grey;
+	}
+	
+	#lighthouse li {
+	    margin: 10px;
+	}
+	
+	#lighthouse a {
+	    padding: 6px;
+	    text-decoration: none;
+	    color: Black;
+	    -webkit-border-radius: 1em;
+	    -moz-border-radius: 1em;
+	    border-radius: 1em;
+	}
+	
+	#lighthouse li:nth-child(2n+1) a{
+		background-color: #fff;
+	}
+	
+	#lighthouse li:nth-child(2n) a{
+		background-color: red;
+	}
+	    
+	#lighthouse li a:hover {
+	    background-color: Yellow;
+	}
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+    <script src="js/column.js"></script>
+    <script>
+        $(document).ready(function () {
+            //$("tr:first").css("font-style", "italic");
+            //$('#regevents tbody td:nth-col(1)').css({ backgroundColor: 'yellow' });
+
+            var today = new Date()
+            var day_name = new Array(7);
+            day_name[0] = "Sunday"
+            day_name[1] = "Monday"
+            day_name[2] = "Tuesday"
+            day_name[3] = "Wednesday"
+            day_name[4] = "Thursday"
+            day_name[5] = "Friday"
+            day_name[6] = "Saturday"
+
+            var list = new Array();
+            var rows = $("#regevents tbody tr");
+            rows.children("td:nth-child(1)").each(function (index) {
+                //each time we add the cell to the total
+                //ages += parseInt($(this).html());
+                //list.push($(this).html());
+
+                var tableDay = $(this).html();
+                //alert("tableDay" + tableDay);
+
+                day = tableDay.split(" ");
+                //alert("day[0]" + day[0]);
+
+                var dayname;
+                dayname = day_name[today.getDay()];
+                //alert("dayname" + dayname);
+                //var dayname = day_name[date().getDay()];
+                //alert("dayname" + dayname);
+
+                //alert("day[0] " + day[0] + "  dayname " + dayname);
+                if (day[0] == dayname) {
+
+                    $(this).css("color", "red");
+                    //alert(index);
+                    $("#regevents tbody tr:nth-child("+ (index+1) +")").css("background-color", "white");
+                    //alert('true');
+                }
+            });
+
+
+
+            //$.each(list, function () {
+            //    day = this.split(" ");
+            //    //alert(day[0]);
+            //    var dayname;
+            //    dayname = day_name[today.getDay()];
+            //    //alert("dayname" + dayname);
+            //    //var dayname = day_name[date().getDay()];
+            //    //alert(dayname);
+            //    //alert("day[0] " + day[0] + "  dayname " + dayname);
+            //    if (day[0] == dayname) {
+            //        $(this).css("color", "red");
+            //        alert('true');
+            //    }
+            //});
+
+        });
+    </script>
+
+</head>
+
+<body>
+	<div id="container">
+		<header>
+			<hgroup>
+				<h1>The Smugglers</h1>
+				<h2>Real Ale, Real Cider, Real Music</h2>
+			</hgroup>
+
+			<nav>
+				<ul>
+					<li><a href="/">Main</a></li>
+					<li><a href="#">Live Music</a></li>
+					<li><a href="#">Food & Drink</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<div id="sidebar">
+			<section id="events">
+				<header>
+					<h1>Regular Events</h1>
+				</header>
+                <!--<% Response.Write( Date() & " : " & WeekdayName(WeekDay(Date())) )%>-->
+				<table id="regevents" summary="The Regular Events for the Week">
+				<!--<caption>Regular Events</caption>-->
+					<thead>
+						<tr>
+							<th>Day</th><th>Type</th><th>Whom</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr class="note">
+							<td colspan="3"> *Except for 1st Tuesday in the Month which is Open Tap</td>
+						</tr>
+						<tr>
+							<td colspan="3">Bands are subject to change please check regularly.</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td>Sunday</td><td>Open Mic</td><td></td>
+						</tr>
+						<tr>
+							<td>Monday</td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>Tuesday *</td><td>Open Mic</td><td>Pete the Jam</td>
+						</tr>
+						<tr>
+							<td>Wednesday</td><td>Open Mic</td><td></td>
+						</tr>
+						<tr>
+							<td>Thursday</td><td>Open Mic</td><td></td>
+						</tr>
+						<tr>
+							<td>Friday</td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>Saturday</td><td></td><td></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			
+			<section id="hours">
+				<header>
+					<h1>Opening Hours</h1>
+				</header>
+				<ul>
+					<li>SUN</li>
+					<li>MON</li>
+					<li>TUE</li>
+					<li>WED</li>
+					<li>THUR</li>
+					<li>FRI</li>
+					<li>SAT</li>
+				</ul>
+				
+				<p>Sorry</p>
+				<p>No Children after 9pm</p>
+			</section>	
+		</div>
+		
+		<section id="content">
+			<header>
+				<h1>Ideas</h1>
+			</header>
+			
+			<article>
+				<h2>Nav Ideas</h2>
+
+                <ul id="lighthouse">
+                    <li><a href="">a</a></li>
+                    <li><a href="">top</a></li>
+                    <li><a href="">middle</a></li>
+                    <li><a href="">bottom</a></li>
+                    <li><a href="">very long</a></li>
+                </ul>
+
+			</article>
+
+		</section>
+		
+		<footer>
+			<p>© Copyright <a href="http://www.alexhedley.com/">Alex Hedley</a> 2011. All Rights Reserved.</p>
+		</footer>
+
+	</div><!-- #container End -->
+
+	<!-- Scripts -->
+	
+</body>
+
+</html>

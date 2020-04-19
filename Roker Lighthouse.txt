@@ -1,0 +1,14 @@
+Roker Pier Lighthouse
+
+Location
+City 	Roker
+Region 	England
+Country 	United Kingdom
+
+Navigation
+Latitude 	54° 55" 14'
+Longitude 	-1° 21" 10'
+Format 	DD DMS
+Body of water 	North Sea
+Height Above Water 	82 feet
+Light Characteristics 	Flashing white every 5 seconds

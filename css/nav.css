@@ -1,0 +1,41 @@
+/* ----- */
+/*  Nav  */
+/* ----- */
+
+nav li {
+	float: left;
+	width: 8em;
+}
+
+nav, nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+}
+
+nav {
+    margin: 0 auto; 
+}
+
+nav a {
+	color: #000;
+	font-size: 11px;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-left: none;
+	padding: .5em;
+	display: block;
+	background-color: #E7E7E7;
+	text-align: center;
+	
+	-webkit-border-radius:1em;
+	-moz-border-radius:1em;
+	border-radius:1em;
+}
+
+nav a:hover {
+	font-weight: bold;
+	background-color: #9CF;
+	border: 1px solid black;
+}

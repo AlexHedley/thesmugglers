@@ -1,0 +1,101 @@
+@import url("reset.css");
+@import url("nav.css");
+
+/* Headings */
+h1 {
+	font-family: 'Rock Salt', arial, serif;
+	font-size: 2em;
+	margin: .1em;
+}
+
+h2 {
+	font-family: 'Coming Soon', arial, serif;
+	font-size: 1.5em;
+	margin: .5em 0em;
+	padding: .5em;
+	
+	background-color: white;
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-bottomright: 20px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+p { margin: 2px; }
+
+/* Lists */
+ul {
+	margin-left: 30px;
+	padding-bottom: 5px;
+}
+
+/* Header */
+header {
+	padding: 1em;
+	background-color: #ddd;
+	border-bottom: 1px solid gray;
+	margin-bottom: .5em;
+	
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-topright: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+/* Footer */
+footer {
+	clear: both;
+	margin: 0;
+	padding: .5em;
+	color: #333;
+	background-color: #ddd;
+	border-top: 1px solid gray;
+}
+
+/* Section */
+section { margin-bottom: 20px; }
+
+/* Article */
+article { 
+	margin-bottom: 20px;
+}
+
+#container {
+	background-color: blue;
+	color: #333;
+	border: 1px solid gray;
+	line-height: 130%;
+}
+
+#content {
+	background-color: red;
+	margin-right: 300px;
+	border-right: 1px solid gray;
+	padding: 1em 2em;
+}
+
+#sidebar {
+	background-color: blue;
+	float: right;
+	width: 270px;
+	padding: 1em;
+}
+
+#sidebar header { text-align: center; }
+
+#sidebar ul {
+	margin-left: 10px;
+	list-style: none;
+}
+
+#hours { background-color: orange; }
+#hours p { text-align: center; }
+
+
+#events { background-color: green; }
+
+section header h1 { font-size: 1.1em;}

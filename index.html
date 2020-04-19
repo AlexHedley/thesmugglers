@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>The Smugglers (Pub) | Roker</title>
+	
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="favicon.ico" />
+	
+	<meta name="description" content="The Smugglers is a pub in Roker, Sunderland, UK">
+    <meta name="keywords" content="Smugglers, Roker, Sunderland, Pub, Music, Live Music, Buskers, Food, Drink">
+    <meta name="author" content="Alex Hedley">
+	
+	<link rel="stylesheet" href="css/main.css">
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Rock+Salt|Coming+Soon'>
+	<!--[if IE 6]>
+	<link rel="stylesheet" href="css/ie6.css">
+	<![endif]-->
+	
+	<style>
+	table td { padding: 1px; }
+	
+	#regevents { margin: 0px 5px; }
+	
+	table tr, table td { border: 1px solid black; }
+	
+	#regevents tfoot { text-align: center; }
+	
+	.note { font-size: 60%; }
+	
+	/*tbody tr:nth-child(2n+1) {
+		background-color: #fff;
+	}
+	
+	tbody tr:nth-child(2n) {
+		background-color: #99ff99;
+	}*/
+	
+	caption { text-align: right; }
+	
+	.mystri {text-decoration: line-through;}
+	</style>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+    <script src="js/column.js"></script>
+    <script>
+        $(document).ready(function () {
+            //$("tr:first").css("font-style", "italic");
+            //$('#regevents tbody td:nth-col(1)').css({ backgroundColor: 'yellow' });
+
+            var today = new Date()
+            var day_name = new Array(7);
+            day_name[0] = "Sunday"
+            day_name[1] = "Monday"
+            day_name[2] = "Tuesday"
+            day_name[3] = "Wednesday"
+            day_name[4] = "Thursday"
+            day_name[5] = "Friday"
+            day_name[6] = "Saturday"
+
+            var list = new Array();
+            var rows = $("#regevents tbody tr");
+            rows.children("td:nth-child(1)").each(function (index) {
+                //each time we add the cell to the total
+                //ages += parseInt($(this).html());
+                //list.push($(this).html());
+
+                var tableDay = $(this).html();
+                //alert("tableDay" + tableDay);
+
+                day = tableDay.split(" ");
+                //alert("day[0]" + day[0]);
+
+                var dayname;
+                dayname = day_name[today.getDay()];
+                //alert("dayname" + dayname);
+                //var dayname = day_name[date().getDay()];
+                //alert("dayname" + dayname);
+
+                //alert("day[0] " + day[0] + "  dayname " + dayname);
+                if (day[0] == dayname) {
+
+                    $(this).css("color", "red");
+                    //alert(index);
+                    $("#regevents tbody tr:nth-child("+ (index+1) +")").css("background-color", "white");
+                    //alert('true');
+                }
+            });
+
+
+
+            //$.each(list, function () {
+            //    day = this.split(" ");
+            //    //alert(day[0]);
+            //    var dayname;
+            //    dayname = day_name[today.getDay()];
+            //    //alert("dayname" + dayname);
+            //    //var dayname = day_name[date().getDay()];
+            //    //alert(dayname);
+            //    //alert("day[0] " + day[0] + "  dayname " + dayname);
+            //    if (day[0] == dayname) {
+            //        $(this).css("color", "red");
+            //        alert('true');
+            //    }
+            //});
+
+        });
+    </script>
+
+</head>
+
+<body>
+	<div id="container">
+		<header>
+			<hgroup>
+				<h1>The Smugglers</h1>
+				<h2>Real Ale, Real Cider, Real Music</h2>
+			</hgroup>
+
+			<nav>
+				<ul>
+					<li><a href="/">Main</a></li>
+					<li><a href="#">Live Music</a></li>
+					<li><a href="#">Food & Drink</a></li>
+                    <li><a href="ideas.html">Ideas</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<div id="sidebar">
+			<section id="events">
+				<header>
+					<h1>Regular Events</h1>
+				</header>
+                <!--<% Response.Write( Date() & " : " & WeekdayName(WeekDay(Date())) )%>-->
+				<table id="regevents" summary="The Regular Events for the Week">
+				<!--<caption>Regular Events</caption>-->
+					<thead>
+						<tr>
+							<th>Day</th><th>Type</th><th>Whom</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr class="note">
+							<td colspan="3"> *Except for 1st Tuesday in the Month which is Open Tap</td>
+						</tr>
+						<tr>
+							<td colspan="3">Bands are subject to change please check regularly.</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td>Sunday</td><td>Open Mic</td><td></td>
+						</tr>
+						<tr>
+							<td>Monday</td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>Tuesday *</td><td>Open Mic</td><td>Pete the Jam</td>
+						</tr>
+						<tr>
+							<td>Wednesday</td><td>Open Mic</td><td></td>
+						</tr>
+						<tr>
+							<td>Thursday</td><td>Open Mic</td><td></td>
+						</tr>
+						<tr>
+							<td>Friday</td><td></td><td></td>
+						</tr>
+						<tr>
+							<td>Saturday</td><td></td><td></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			
+			<section id="hours">
+				<header>
+					<h1>Opening Hours</h1>
+				</header>
+				<ul>
+					<li>SUN</li>
+					<li>MON</li>
+					<li>TUE</li>
+					<li>WED</li>
+					<li>THUR</li>
+					<li>FRI</li>
+					<li>SAT</li>
+				</ul>
+				
+				<p>Sorry</p>
+				<p>No Children after 9pm</p>
+			</section>	
+		</div>
+		
+		<section id="content">
+			<header>
+				<h1>Main Content</h1>
+			</header>
+			
+			<article>
+				<h2>By Day</h2>
+				<p>During the day we are open in the afternoon for all including children (until 9pm) and those with dogs.</p>
+				<p>With spectacular views across Roker Bay, whatever the weather, you can watch the waves come crashing up the beach which is only a short distance away.</p>
+				<p>It truly is a 2 minute walk through our outdoor area where you can sip your drinks to the sound of the sea.</p>
+			</article>
+			
+			<article>
+				<h2>By Night</h2>
+				<p>Life changes into top gear in 'the best music bar in the North East'.</p>
+				<p>We have a mixture of live bands and musicians nights 6 nights a week, with, occasionally, two gigs on a Sunday.</p>
+				<p>There are also special events ranging from</p>
+				<ul>
+					<li>Cookery Shows</li>
+					<li>Tribute nights to special performances by International Artists including
+						<ul>
+							<li>Boo Hewardine (Fairground Attraction)</li>
+							<li>Rod Clements (Lindisfarne)</li>
+							<li>Baz Warne (Stranglers)</li>
+						</ul>
+					</li>
+				</ul>
+				<p>Most events are free, others are very resonably priced.</p>
+			</article>
+			
+			<article>
+				<h2>Gigs</h2>
+
+				<table id="" summary="January Gigs at the Smugglers">
+				<caption>January Gigs</caption>
+					<thead>
+						<tr><th>Day</th><th>Artist</th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Fri 4th</td><td>The Avengers</td>
+						</tr>
+						<tr>
+							<td>Sat 5th</td><td>Zepfreecream</td>
+						</tr>
+						<tr>
+							<td>Sun 6th</td><td>Acoustic, Blues & Folk Night</td>
+						</tr>
+						<tr>
+							<td>Wed 9th</td><td>Bill & Bam Music Night</td>
+						</tr>
+						<tr>
+							<td>Thurs 10th</td><td>Scott Keirs Music Night</td>
+						</tr>
+						<tr>
+							<td>Fri 11th</td><td>The Familiar Ones</td>
+						</tr>
+						<tr>
+							<td>Sat 12th</td><td>Heavenly Thrillbillies</td>
+						</tr>
+						<tr>
+							<td>Sun 13th</td><td>Acoustic Blues & Folk</td>
+						</tr>
+						<tr>
+							<td>Wed 16th</td><td>Bill & Bam Music Night</td>
+						</tr>
+						<tr>
+							<td>Thurs 17th</td><td>Scott Keirs Music Party</td>
+						</tr>
+						<tr>
+							<td>Fri 18th</td><td>Witchkraft</td>
+						</tr>
+						<tr>
+							<td>Sat 19th</td><td>The Rattlers</td>
+						</tr>
+						<tr>
+							<td>Sun 20th</td><td>Acoustic Blues & Folk</td>
+						</tr>
+						<tr>
+							<td>Wed 23th</td><td>Bill & Bam Buskers Night</td>
+						</tr>
+						<tr>
+							<td>Thurs 24th</td><td>Scott Keirs Music Night</td>
+						</tr>
+						<tr>
+							<td>Fri 25th</td><td>Bullet</td>
+						</tr>
+						<tr>
+							<td>Sat 26th</td><td>The Redwings<span class="mystri">The Fibbers</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</article>
+		</section>
+		
+		<footer>
+			<p>© Copyright <a href="http://www.alexhedley.com/">Alex Hedley</a> 2011. All Rights Reserved.</p>
+		</footer>
+
+	</div><!-- #container End -->
+
+	<!-- Scripts -->
+	
+</body>
+
+</html>

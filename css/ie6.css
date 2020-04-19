@@ -1,0 +1,7 @@
+/* ----- */
+/*  Nav  */
+/* ----- */
+
+nav, nav ul, nav a {
+	zoom: 1; /* for IE 6 */
+}
